@@ -1,3 +1,4 @@
+// pages/Home.js
 import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import MovieCard from "../components/MovieCard";

@@ -1,3 +1,4 @@
+// pages/Movie.js
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
@@ -16,10 +17,13 @@ function Movie() {
   const { id } = useParams();
 
   useEffect(() => {
-    // Use mock data instead of fetch
+    // Use mock data instead of fetch with a small delay to ensure rendering
     const movieData = mockMovies[id];
     if (movieData) {
-      setMovie(movieData);
+      // Small timeout to ensure React has time to render
+      setTimeout(() => {
+        setMovie(movieData);
+      }, 10);
     }
   }, [id]);
 
